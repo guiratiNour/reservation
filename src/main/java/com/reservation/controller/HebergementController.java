@@ -42,4 +42,3 @@ public class HebergementController {
         hebergementService.deleteHebergement(id);
     }
 }
-

@@ -18,7 +18,13 @@ public class Hebergement {
     private String contact;
     private String adresse;
     private String politiqueAnnulation;
-
+    private String nbEtoile;
+    private String espace;
+    private double NombreSallesDeBains;
+    private boolean jardin;
+    private boolean piscine;
+    private int nombreChambres;
+    private String vue;
     @ManyToOne
     @JoinColumn(name = "categorie_id")
     @JsonIgnore
@@ -40,8 +46,11 @@ public class Hebergement {
         
     }
 
+	
+
 	public Hebergement(String nom, String ville, String pays, double prix, double distance, String contact,
-			String adresse, String politiqueAnnulation, Categorie categorie, List<Image> images,
+			String adresse, String politiqueAnnulation, String nbEtoile, String espace, double nombreSallesDeBains,
+			boolean jardin, boolean piscine, int nombreChambres, String vue, Categorie categorie, List<Image> images,
 			List<Equipement> equipements, List<ServiceHebergement> services) {
 		super();
 		this.nom = nom;
@@ -52,11 +61,20 @@ public class Hebergement {
 		this.contact = contact;
 		this.adresse = adresse;
 		this.politiqueAnnulation = politiqueAnnulation;
+		this.nbEtoile = nbEtoile;
+		this.espace = espace;
+		NombreSallesDeBains = nombreSallesDeBains;
+		this.jardin = jardin;
+		this.piscine = piscine;
+		this.nombreChambres = nombreChambres;
+		this.vue = vue;
 		this.categorie = categorie;
 		this.images = images;
 		this.equipements = equipements;
 		this.services = services;
 	}
+
+
 
 	public String getNom() {
 		return nom;
@@ -160,6 +178,90 @@ public class Hebergement {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+
+
+	public String getNbEtoile() {
+		return nbEtoile;
+	}
+
+
+
+	public void setNbEtoile(String nbEtoile) {
+		this.nbEtoile = nbEtoile;
+	}
+
+
+
+	public String getEspace() {
+		return espace;
+	}
+
+
+
+	public void setEspace(String espace) {
+		this.espace = espace;
+	}
+
+
+
+	public double getNombreSallesDeBains() {
+		return NombreSallesDeBains;
+	}
+
+
+
+	public void setNombreSallesDeBains(double nombreSallesDeBains) {
+		NombreSallesDeBains = nombreSallesDeBains;
+	}
+
+
+
+	public boolean isJardin() {
+		return jardin;
+	}
+
+
+
+	public void setJardin(boolean jardin) {
+		this.jardin = jardin;
+	}
+
+
+
+	public boolean isPiscine() {
+		return piscine;
+	}
+
+
+
+	public void setPiscine(boolean piscine) {
+		this.piscine = piscine;
+	}
+
+
+
+	public int getNombreChambres() {
+		return nombreChambres;
+	}
+
+
+
+	public void setNombreChambres(int nombreChambres) {
+		this.nombreChambres = nombreChambres;
+	}
+
+
+
+	public String getVue() {
+		return vue;
+	}
+
+
+
+	public void setVue(String vue) {
+		this.vue = vue;
 	}
 	
 

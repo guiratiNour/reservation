@@ -33,5 +33,9 @@ public class CategorieController {
     public void deleteCategorie(@PathVariable Long id) {
         categorieService.deleteCategorie(id);
     }
+    
+    @GetMapping("/type/{type}")
+    public Categorie getCategorieByType(@PathVariable String type) {
+        return categorieService.findByType(type);
+    }
 }
-

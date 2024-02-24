@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.reservation.entities.Categorie;
 
 public interface CategorieRepository extends JpaRepository<Categorie, Long> {
+    Categorie findByType(String type);
 }
-
